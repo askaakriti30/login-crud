@@ -1,0 +1,51 @@
+<div class="content">
+
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="page-title-box">
+                <h4 class="page-title">Dashboard</h4>
+            </div>
+
+            <div class="card m-b-20">
+                <div class="card-body">
+                    
+                    <h5 class="mt-0 m-b-30 header-title">All Employees <span class="ml-3 d-inline-block"><a class="add-btn" routerLink="add-employee"><img [src]="addIcon" class="mw-lg" alt="Add" /><span>Add</span></a></span></h5>
+                    
+                    <div class="table-responsive">
+                        
+                        <table class="table table-vertical mb-1">
+                            <tbody>
+                                
+                                <tr *ngFor="let employee of allEmployees">
+                                    <td>#{{ employee.employeeId }}</td>
+                                    <td>{{ employee.name }}</td>
+                                    <td><span class="badge badge-pill" [ngClass]="{'badge-success': employee.status=='Onboard', 'badge-danger':employee.status=='Left', 'badge-warning':employee.status=='Resigned' }">{{ employee.status }}</span></td>
+                                    <td>{{ employee.salary | currency: '$' : 'symbol' : '1.0-0' }}</td><td>{{ employee.joiningDate * 1000 | date:'dd/MM/yyyy' }}</td>
+                                    <td><a [routerLink]="['/edit-employee', employee.id]" class="btn btn-secondary btn-sm waves-effect waves-light">Edit</a>
+                                        <button (click)="open(mymodal, employee.id)" class="btn btn-danger btn-sm waves-effect waves-light ml-2"><img [src]="deleteIcon" class="mw-md" alt="Delete" /></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #mymodal let-modal>
+        <!-- <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div> -->
+        <div class="modal-body text-center">
+            Are you sure you want to Delete this entry?
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn w-md btn-danger" (click)="modal.close('delete')">Yes</button>
+            <button type="button" class="btn w-md btn-secondary" (click)="modal.close()">No</button>
+        </div>
+    </ng-template>
+
+</div>

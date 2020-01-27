@@ -1,0 +1,111 @@
+.sidebar {
+    width: 240px;
+    z-index: 10;
+    background: #2b3a4a;
+    bottom: 0;
+    margin-top: 0;
+    padding-bottom: 30px;
+    position: fixed;
+    top: 0;
+    transition: all 0.2s ease-in-out;
+
+    &.toggle {
+        width: 70px;
+        transition: all 0.2s ease-in-out;
+
+        #sidebar-menu ul li a img {
+            margin-right: 0;
+            margin-left: 8px;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+
+    #sidebar-menu {
+        padding-top: 10px;
+        max-height: 300px;
+        overflow: hidden;
+        overflow-y: auto;
+
+        ul {
+            padding: 0;
+
+            li {
+                list-style: none;
+
+                &.menu-title {
+                    padding: 12px 20px!important;
+                    letter-spacing: 1px;
+                    font-size: 10px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: #b4bfcc;
+                }
+
+                a {
+                    color: #8699ad;
+                    display: block;
+                    padding: 13px 20px;
+                    font-size: 13.3px;
+                    position: relative;
+                    -webkit-transition: all .5s;
+                    transition: all .5s;
+
+                    img {
+                        max-width: 16px;
+                        margin-right: 8px;
+                        transition: all 0.2s ease-in-out;
+                    }
+
+                    &.active,
+                    &:hover {
+                        color: #fff !important;
+                        background-color: #263442;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1024px) and (min-width: 767px) {
+        width: 70px;
+        transition: all 0.2s ease-in-out;
+
+        #sidebar-menu ul li a img {
+            margin-right: 0;
+            margin-left: 8px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .sm-view {
+            display: block !important;
+        }
+
+        .sm-hide {
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 767px) {
+        z-index: 99;
+        left: -240px;
+
+        &.toggle {
+            width: 240px;
+            left: 0;
+        }
+
+        #sidebar-menu ul li a img {
+            margin-right: 8px !important;
+            margin-left: 0 !important;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .sm-view {
+            display: none !important;
+        }
+
+        .sm-hide {
+            display: inline-block !important;
+        }
+    }
+}

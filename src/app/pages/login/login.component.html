@@ -1,0 +1,56 @@
+<div class="wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="text-center m-0">
+                <a href="#" class="d-block m-b-15">
+                    <img [src]="imgURL" height="60" alt="logo">
+                </a>
+            </h3>
+
+            <h4 class="text-muted m-b-5 text-center">Welcome to Basecamp !</h4>
+            <p class="text-muted text-center">Sign in to continue.</p>
+
+            <form class="form-horizontal m-t-30 p-3" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="m-b-15">
+                    <label for="username">Username</label> 
+                    <input type="text" class="form-control" id="username" placeholder="Enter username" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                        <div *ngIf="f.username.errors.email">Username must be a valid email address</div>
+                    </div>
+                </div>
+                
+                <div class="m-b-15">
+                    <label for="password">Password</label> 
+                    <input type="password" class="form-control" id="password" placeholder="Enter password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+
+                <div class="m-b-15 row m-t-20">
+                    <div class="col-6">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customControlInline"> 
+                            <label class="custom-control-label" for="customControlInline">Remember me</label>
+                        </div>
+                    </div>
+                    <div class="col-6 text-right">
+                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
+                    </div>
+                </div>
+                
+                <div class="m-t-10 mb-0 row">
+                    <div class="col-12 m-t-20">
+                        <a routerLink="/login" class="text-muted">Forgot your password?</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="m-t-40 text-center">
+        <p>Don't have an account ? <a routerLink="/login" class="text-primary">Signup Now</a></p>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="sidebar" [class.toggle]="toExpand">
+    
+    <div class="m-b-15 pt-3 d-flex justify-content-center">
+        <a routerLink="/"><img [src]="logoURL" height="40" alt="logo" class="sm-hide" [class.d-none]="toExpand" />
+        <img [src]="smallLogoURL" height="40" alt="logo" class="sm-view" [ngClass]="{'d-none': !toExpand, 'd-block': toExpand }" /></a>
+    </div>
+
+    <div id="sidebar-menu" class="active">
+        <ul id="side-menu">
+            <li class="menu-title">Main</li>
+            <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                true}"><span><img src="assets/images/dashboard.svg" alt="" /> <span class="sm-hide" [class.d-none]="toExpand">Dashboard</span></span></a></li>
+            <li><a routerLink="/add-employee" routerLinkActive="active"><span><img src="assets/images/employee.svg" alt="" /> <span class="sm-hide" [class.d-none]="toExpand">Add Employee</span></span></a></li>
+        </ul>
+    </div>
+
+</div>

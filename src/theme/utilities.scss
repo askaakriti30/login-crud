@@ -1,0 +1,46 @@
+/*---Global Classes---*/
+.m-b-15 {
+    margin-bottom: 15px;
+}
+.w-md {
+    min-width: 110px;
+}
+.mw-md {
+    max-width: 14px;
+}
+.mw-lg {
+    max-width: 22px;
+}
+.m-t-20 {
+    margin-top: 20px;
+}
+.m-t-30 {
+    margin-top: 30px;
+}
+.m-t-10 {
+    margin-top: 10px;
+}
+.full-width {
+    width: 100%;
+}
+.m-b-30 {
+    margin-bottom: 30px;
+}
+
+/*---Override Classes---*/
+.text-primary {
+    color: var(--primary) !important;
+}
+.bg-success {
+    background-color: #69c77e!important;
+}
+.bg-danger {
+    background-color: #ea6471!important;
+}
+.toast-body {
+    padding: .75rem 20px;
+}
+.modal-body {
+    font-size: 17px;
+    padding: 50px 0;
+}

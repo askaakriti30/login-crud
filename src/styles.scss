@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import './theme/variable.scss';
+@import './theme/theme.scss';
+@import './theme/utilities.scss';
+@import './theme/form.scss';
+
+body  {
+    background: #f5f5f5;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: var(--dark-grey);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*---Heading Specifics---*/
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+

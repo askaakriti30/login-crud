@@ -1,0 +1,33 @@
+<nav class="navbar-custom full-width d-flex justify-content-between">
+
+    <ul class="list-inline menu-left mb-0">
+        <li><button class="button-menu-mobile open-left waves-effect" (click)="toggleSidebar(toToggle = !toToggle)"><img [src]="navIcon" alt="Nav Stack" /></button></li>
+    </ul>
+    
+    <ul class="navbar-right d-flex list-inline mb-0">
+        <li class="dropdown notification-list d-none d-sm-block">
+            <form role="search" class="app-search">
+                
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" placeholder="Search.."> 
+                    <button type="submit"><img [src]="searchIcon" alt="Search" /></button>
+                </div>
+
+            </form>
+        </li>
+        
+        <li class="dropdown notification-list">
+            <div class="dropdown notification-list nav-pro-img d-flex">
+                <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user" data-toggle="dropdown" (click)="open = !open;" role="button" aria-haspopup="false" aria-expanded="false">
+                    <img [src]="userImage" alt="user" class="rounded-circle">
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right profile-dropdown" [class.open]="open">
+                    <a class="dropdown-item" routerLink="/"><img [src]="userIcon" alt="Profile" /> Profile</a> 
+                    <a class="dropdown-item" routerLink="/"><img [src]="profileIcon" alt="Settings" /> Settings</a> 
+                    <a class="dropdown-item" (click)="logout()"><img [src]="logoutIcon" alt="Logout" /> Logout</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</nav>

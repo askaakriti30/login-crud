@@ -1,0 +1,79 @@
+label {
+    color: var(--dark-grey);
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+}
+
+button, input, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    outline: none;
+
+    &:focus,
+    &:active {
+        outline : none !important;
+    }
+}
+
+/*---Classes to be used on Inputs and Checkboxes, Radios---*/
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+    &:focus,
+    &:active {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: none !important;
+    }
+}
+
+.custom-control-label::before {
+    top: 0;
+}
+
+.custom-control-label::after {
+    top: 1px;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: var(--primary);
+    background-color: var(--primary);
+}
+
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn {
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}

@@ -1,0 +1,118 @@
+.navbar-custom {
+    background-color: #fff;
+    border-radius: 0;
+    margin-bottom: 0;
+    padding: 0 10px 0 0;
+    box-shadow: 0 2px 3px -2px rgba(0,0,0,.15);
+    min-height: 70px;
+
+    .button-menu-mobile {
+        border: none;
+        color: #525f80;
+        display: inline-block;
+        height: 70px;
+        width: 60px;
+        background-color: #fff;
+        font-size: 24px;
+        transition: all 0.1s ease-in;
+
+        img {
+            max-width: 24px;
+        }
+
+        &:hover {
+            background-color: #e9ecef;
+            transition: all 0.2s ease-in;
+        }
+
+        @media (max-width: 1024px) and (min-width: 767px) {
+            display: none !important;
+        }
+    }
+}
+
+.app-search {
+    margin-top: 18px;
+    position: relative;
+
+    .form-control, .form-control:focus {
+        border: 1px solid #e9ecef;
+        font-size: 13px;
+        height: 34px;
+        padding-left: 18px;
+        padding-right: 40px;
+        margin-right: 20px;
+        background: #f8f9fa;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-radius: 30px;
+        width: 200px;
+    }
+
+    button {
+        position: absolute;
+        top: 7px;
+        right: 26px;
+        display: block;
+        color: #707070;
+        font-size: 11px;
+        border: none;
+        background-color: transparent;
+
+        img {
+            max-width: 16px;
+        }
+    }
+}
+
+.notification-list {
+    .nav-link {
+        padding: 0 15px;
+        line-height: 70px;
+
+        img {
+            height: 36px;
+            width: 36px;
+        }
+    }
+}
+
+.dropdown-toggle:hover {
+    background-color: #e9ecef;
+    transition: all 0.2s ease-in;
+}
+
+.dropdown-menu {
+    position: absolute;
+    will-change: transform;
+    top: 0px;
+    left: 0px;
+    transform: translate3d(-104px, 70px, 0px);
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    padding: 0;
+
+    &.open {
+        max-height: 100vh;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .dropdown-item {
+        background-color: #fff;
+        padding: .60rem 1.5rem;
+        font-weight: 600;
+        color: #707070;
+
+        img {
+            max-width: 14px;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: #f8f9fa;
+            color: #2a3142;
+        }
+    }
+}
