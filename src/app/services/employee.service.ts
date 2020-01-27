@@ -29,6 +29,7 @@ export class EmployeeService {
     }
 
     deleteEmployee(id: number) {
-      this.employees.splice(id, 1)
+      let index = this.util.getEmployeeIndex(id, this.employees);
+      this.employees.splice(index, 1);
     }
 }
